@@ -27,11 +27,12 @@ class processRequest
         $page = request::getPage();
         $action = request::getAction();
         //these are helpful for figuring out the action and method being requested
-        //echo 'Action: ' . $action . '</br>';
-        //echo 'Page: ' . $page . '</br>';
-        //echo 'Request Method: ' . $request_method . '</br>';
+        echo 'Action: ' . $action . '</br>';
+        echo 'Page: ' . $page . '</br>';
+        echo 'Request Method: ' . $request_method . '</br>';
         //this gets the routes objects, you need to add routes to add pages and follow the template of the route specified
         $routes = \routes::getRoutes();
+        print_r($routes);
         $foundRoute = NULL;
         //this figures out which route matches the page being requested in the URL and returns it so that the controller and method can be called
         foreach ($routes as $route) {
@@ -40,6 +41,7 @@ class processRequest
                 break;
             }
         }
+        //print_r($foundRoute);
         if (is_null($foundRoute)) {
             controller::getTemplate('notfound');
             exit;
