@@ -50,6 +50,7 @@ abstract class model
             }
         }
         $sql .= ' WHERE id=' . $this->id;
+        echo $sql;
         return $sql;
     }
     public function delete()

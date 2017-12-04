@@ -31,8 +31,10 @@ class tasksController extends http\controller
     //this would be for the post for sending the task edit form
     public static function store()
     {
+      echo 'store';
         $record = todos::findOne($_REQUEST['id']);
-        $record->body = $_REQUEST['body'];
+        print_r($record);
+        //$record->body = $_REQUEST['body'];
         $record->save();
         print_r($_POST);
     }
