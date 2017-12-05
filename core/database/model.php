@@ -55,10 +55,12 @@ abstract class model
     }
     public function delete()
     {
+        echo 'in delete';
         $db = dbConn::getConnection();
         $modelName = static::$modelName;
         $tableName = $modelName::getTablename();
         $sql = 'DELETE FROM ' . $tableName . ' WHERE id=' . $this->id;
+        //echo $sql;
         $statement = $db->prepare($sql);
         $statement->execute();
     }

@@ -77,7 +77,7 @@ class routes
         $routes[] = $route;
         //YOU WILL NEED TO ADD MORE ROUTES
         $route = new route();
-        $route->http_method = 'POST';
+        $route->http_method = 'GET';
         $route->action = 'delete';
         $route->page = 'tasks';
         $route->controller = 'tasksController';

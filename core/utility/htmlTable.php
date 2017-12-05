@@ -21,15 +21,16 @@ class htmlTable
             $tableGen .= '<tr>';
             foreach ($record as $key => $value) {
                 if ($key == 'id') {
-                    //$tableGen .= '<td><a href="index.php?page=' . $referingPage . '&action=show&id=' . $value . '"></a></td>';
                     $id1=$value;
                 } 
-                //else {
                     $tableGen .= '<td>' . $value . '</td>';
-                //}
             }
-            //print_r($record['id']);
+            //echo $id1;
             $tableGen .= '<td><a href="index.php?page=' . $referingPage . '&action=show&id=' . $id1 . '">edit</a></td>';
+            $tableGen .= '<td><a href="index.php?page=' . $referingPage . '&action=delete&id=' . $id1 . '">delete</a></td>';
+            //$tableGen .= '<td><form action="index.php?page='.$referingPage . '&action=delete&id=' . $id1 . '" method="post" id="form1">';
+            //$tableGen .= '<button type="submit" form="form1" value="delete">Delete</button>';
+            //$tableGen .= '</form></td>';
             $id1='';
             $tableGen .= '</tr>';
         }
