@@ -20,7 +20,9 @@ class tasksController extends http\controller
     //you should check the notes on the project posted in moodle for how to use active record here
     public static function create()
     {
-        print_r($_POST);
+        //$record = todos::findOne($_REQUEST['id']);
+        self::getTemplate('create_task', NULL);
+        //print_r($_POST);
     }
     //this is the function to view edit record form
     public static function edit()
@@ -32,8 +34,8 @@ class tasksController extends http\controller
     public static function store()
     {
       echo 'store';
-        $record = todos::findOne($_REQUEST['id']);
-        print_r($record);
+        //$record = todos::findOne($_REQUEST['id']);
+        //print_r($record);
         //$record->body = $_REQUEST['body'];
         $record->save();
         print_r($_POST);
