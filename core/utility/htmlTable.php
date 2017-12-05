@@ -27,7 +27,7 @@ class htmlTable
             }
             //echo $id1;
             $tableGen .= '<td><a href="index.php?page=' . $referingPage . '&action=show&id=' . $id1 . '">edit</a></td>';
-            $tableGen .= '<td><a href="index.php?page=' . $referingPage . '&action=delete&id=' . $id1 . '">delete</a></td>';
+            $tableGen .= '<td><a href="index.php?page=' . $referingPage . '&action=edit&id=' . $id1 . '">delete</a></td>';
             //$tableGen .= '<td><form action="index.php?page='.$referingPage . '&action=delete&id=' . $id1 . '" method="post" id="form1">';
             //$tableGen .= '<button type="submit" form="form1" value="delete">Delete</button>';
             //$tableGen .= '</form></td>';
