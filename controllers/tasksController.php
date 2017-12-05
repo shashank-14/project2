@@ -44,9 +44,7 @@ class tasksController extends http\controller
     {
         $record = todos::findOne($_REQUEST['id']);
         $record->delete();
-        $records = todos::findAll();
-        self::getTemplate('all_tasks', $records);
-        //print_r($_POST);
+        header('Location:index.php?page=tasks&action=all');
     }
 }
 ?>

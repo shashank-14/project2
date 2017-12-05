@@ -19,6 +19,12 @@
 
 <?php
 //this is how you print something
+$text='';
+$text.='<centre>';
+$text.='<h1><a href="index.php?page=tasks&action=create">Create New Task</a></h1>';
+$text.='</center>';
+echo $text;
+
 print utility\htmlTable::genarateTableFromMultiArray($data);
 ?>
 
