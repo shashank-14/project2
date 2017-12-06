@@ -17,12 +17,12 @@
 
 <body>
 
-<!--<?php
+<?php
 //this is how you print something  $data contains the record that was selected on the table.
 //print_r($data);
 //$id= $data->id;
 echo '<br>';
-?>-->
+?>
 ID:<input type="text" name="id" value=""><br>
 Owner Email:<input type="text" name="owneremail" value=""><br>
 Owner ID:<input type="text" name="ownerid" value=""><br>

@@ -39,7 +39,7 @@ class processRequest
         $foundRoute = NULL;
         //this figures out which route matches the page being requested in the URL and returns it so that the controller and method can be called
         foreach ($routes as $route) {
-          echo $route->action;
+          //echo $route->action;
             if ($route->page == $page && $route->http_method == $request_method && $route->action == $action) {
                 $foundRoute = $route;
                 break;
