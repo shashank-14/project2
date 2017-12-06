@@ -12,18 +12,20 @@ abstract class model
         }
         $db = dbConn::getConnection();
         $statement = $db->prepare($sql);
-        $array = get_object_vars($this);
-        if ($INSERT == TRUE) {
+        //$array = get_object_vars($this);
+        //print_r ($array);
+        /*if ($INSERT == TRUE) {
             unset($array['id']);
         }
         foreach (array_flip($array) as $key => $value) {
             $statement->bindParam(":$value", $this->$value);
-        }
+            echo $statement;
+        }*/
         $statement->execute();
-        if ($INSERT == TRUE) {
-            $this->id = $db->lastInsertId();
-        }
-        return $this->id;
+        //if ($INSERT == TRUE) {
+        //    $this->id = $db->lastInsertId();
+        //}
+        //return $this->id;
     }
     private function insert()
     {
@@ -39,29 +41,41 @@ abstract class model
     }
     private function update()
     {
+        echo 'in update';
+        $record= new \todo;
+        $record->id=$_REQUEST['id'];
+        $record->owneremail=$_POST['owneremail'];
+        $record->ownerid=$_POST['ownerid'];
+        $record->createddate=$_POST['createddate'];
+        $record->duedate=$_POST['duedate'];
+        $record->message=$_POST['message'];
+        $record->isdone=$_POST['isdone'];
+        
+        print_r($record);
         $modelName = static::$modelName;
         $tableName = $modelName::getTablename();
-        $array = get_object_vars($this);
+        $array = get_object_vars($record);
+        echo '<br>';
+        print_r($array);
         $comma = " ";
         $sql = 'UPDATE ' . $tableName . ' SET ';
         foreach ($array as $key => $value) {
             if (!empty($value)) {
+            echo '<br>';
+            echo $value;
                 $sql .= $comma . $key . ' = "' . $value . '"';
                 $comma = ", ";
             }
         }
         $sql .= ' WHERE id=' . $this->id;
-        echo $sql;
         return $sql;
     }
     public function delete()
     {
-        //echo 'in delete';
         $db = dbConn::getConnection();
         $modelName = static::$modelName;
         $tableName = $modelName::getTablename();
         $sql = 'DELETE FROM ' . $tableName . ' WHERE id=' . $this->id;
-        //echo $sql;
         $statement = $db->prepare($sql);
         $statement->execute();
     }
