@@ -12,25 +12,12 @@ abstract class model
         }
         $db = dbConn::getConnection();
         $statement = $db->prepare($sql);
-        //$array = get_object_vars($this);
-        //print_r ($array);
-        /*if ($INSERT == TRUE) {
-            unset($array['id']);
-        }
-        foreach (array_flip($array) as $key => $value) {
-            $statement->bindParam(":$value", $this->$value);
-            echo $statement;
-        }*/
         $statement->execute();
-        //if ($INSERT == TRUE) {
-        //    $this->id = $db->lastInsertId();
-        //}
-        //return $this->id;
     }
     
-    public static function lastID(){
-      //$modelName = static::$modelName;
-      //$tableName = $modelName::getTablename();
+    public function lastID(){
+      $modelName = static::$modelName;
+      $tableName = $modelName::getTablename();
       $db = dbConn::getConnection();
       $sql='select MAX(id) from todos';
       $statement = $db->prepare($sql);
@@ -43,9 +30,7 @@ abstract class model
     }
     private function insert()
     {
-        echo 'insert';
-        $id=model::lastID();
-        //echo $id;
+        $id=$this->lastID();
         $record= new \todo;
         $record->id=$id;
         $record->owneremail=$_POST['owneremail'];
@@ -57,16 +42,10 @@ abstract class model
         $modelName = static::$modelName;
         $tableName = $modelName::getTablename();
         $array = get_object_vars($record);
-        //unset($array['id']);
-        //$columnString = implode(',', array_flip($array));
-        //$valueString = ':' . implode(',:', array_flip($array));
         $columnString = array_keys($array);
         $columnString1=implode(',', $columnString);
-        //echo $columnString1;
         $valueString = "'".implode("','", $array)."'";
-        //echo $valueString;
         $sql = 'INSERT INTO ' . $tableName . ' (' . $columnString1 . ') VALUES (' . $valueString . ')';
-        //echo '<br>'.$sql;
         return $sql;
     }
     private function update()
@@ -79,13 +58,9 @@ abstract class model
         $record->duedate=$_POST['duedate'];
         $record->message=$_POST['message'];
         $record->isdone=$_POST['isdone'];
-        
-        print_r($record);
         $modelName = static::$modelName;
         $tableName = $modelName::getTablename();
         $array = get_object_vars($record);
-        echo '<br>';
-        print_r($array);
         $comma = " ";
         $sql = 'UPDATE ' . $tableName . ' SET ';
         foreach ($array as $key => $value) {
