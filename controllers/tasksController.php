@@ -21,6 +21,7 @@ class tasksController extends http\controller
     public static function create()
     {
         //$record = todos::findOne($_REQUEST['id']);
+        //if($re)
         self::getTemplate('create_task', NULL);
         //print_r($_POST);
     }
@@ -38,8 +39,15 @@ class tasksController extends http\controller
         //$record->body = $_REQUEST['body'];
         //echo '<br>';
         $id=$_REQUEST['id'];
-        $record = todos::findOne($_REQUEST['id']);
-        $record->save();
+        if($id==null){
+          $record=new \todo;
+          $record->save(); 
+        }
+        else{
+          echo 'id '.$id;
+          $record = todos::findOne($_REQUEST['id']);
+          $record->save();
+          }
         header('Location:index.php?page=tasks&action=all');
         
         //$record->save();

@@ -27,21 +27,50 @@ abstract class model
         //}
         //return $this->id;
     }
+    
+    public static function lastID(){
+      //$modelName = static::$modelName;
+      //$tableName = $modelName::getTablename();
+      $db = dbConn::getConnection();
+      $sql='select MAX(id) from todos';
+      $statement = $db->prepare($sql);
+      $statement->execute();
+      $statement->setFetchMode();
+      $recordsSet =  $statement->fetchAll(\PDO::FETCH_ASSOC);
+      $record=$recordsSet[0];
+      $LastID= $record["MAX(id)"];
+      return $LastID+1;
+    }
     private function insert()
     {
         echo 'insert';
-        /*$modelName = static::$modelName;
+        $id=model::lastID();
+        //echo $id;
+        $record= new \todo;
+        $record->id=$id;
+        $record->owneremail=$_POST['owneremail'];
+        $record->ownerid=$_POST['ownerid'];
+        $record->createddate=$_POST['createddate'];
+        $record->duedate=$_POST['duedate'];
+        $record->message=$_POST['message'];
+        $record->isdone=$_POST['isdone'];
+        $modelName = static::$modelName;
         $tableName = $modelName::getTablename();
-        $array = get_object_vars($this);
-        unset($array['id']);
-        $columnString = implode(',', array_flip($array));
-        $valueString = ':' . implode(',:', array_flip($array));
-        $sql = 'INSERT INTO ' . $tableName . ' (' . $columnString . ') VALUES (' . $valueString . ')';
-        return $sql;*/
+        $array = get_object_vars($record);
+        //unset($array['id']);
+        //$columnString = implode(',', array_flip($array));
+        //$valueString = ':' . implode(',:', array_flip($array));
+        $columnString = array_keys($array);
+        $columnString1=implode(',', $columnString);
+        //echo $columnString1;
+        $valueString = "'".implode("','", $array)."'";
+        //echo $valueString;
+        $sql = 'INSERT INTO ' . $tableName . ' (' . $columnString1 . ') VALUES (' . $valueString . ')';
+        //echo '<br>'.$sql;
+        return $sql;
     }
     private function update()
     {
-        echo 'in update';
         $record= new \todo;
         $record->id=$_REQUEST['id'];
         $record->owneremail=$_POST['owneremail'];
