@@ -56,9 +56,6 @@ class tasksController extends http\controller
           $record->save();
           }
         header('Location:index.php?page=tasks&action=all');
-        
-        //$record->save();
-        //print_r($_POST);
     }
     //this is the delete function.  You actually return the edit form and then there should be 2 forms on that.
     //One form is the todo and the other is just for the delete button

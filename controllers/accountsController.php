@@ -12,6 +12,7 @@ class accountsController extends http\controller
     //to call the show function the url is index.php?page=accounts&action=all
     public static function all()
     {
+        echo 'in all';
         $records = accounts::findAll();
         self::getTemplate('all_accounts', $records);
     }
@@ -30,6 +31,7 @@ class accountsController extends http\controller
     {
         $user = accounts::findUserbyEmail($_REQUEST['email']);
         if ($user == FALSE) {
+            //echo 'in if';
             $user = new account();
             $user->email = $_POST['email'];
             $user->fname = $_POST['fname'];
@@ -37,22 +39,25 @@ class accountsController extends http\controller
             $user->phone = $_POST['phone'];
             $user->birthday = $_POST['birthday'];
             $user->gender = $_POST['gender'];
-            //$user->password = $_POST['password'];
+            $user->password = $_POST['password'];
+            //print_r($user);
             //this creates the password
             //this is a mistake you can fix...
             //Turn the set password function into a static method on a utility class.
-            $user->password = $user->setPassword($_POST['password']);
+           $user->password = account::setPassword($_POST['password']);
+           //print_r($user);
             $user->save();
             //you may want to send the person to a
             // login page or create a session and log them in
             // and then send them to the task list page and a link to create tasks
-            header("Location: index.php?page=accounts&action=all");
+            header("Location: index.php?page=homepage&action=show");
         } else {
+            echo 'in else';
             //You can make a template for errors called error.php
             // and load the template here with the error you want to show.
            // echo 'already registered';
-            $error = 'already registered';
-            self::getTemplate('error', $error);
+            //$error = 'already registered';
+            //self::getTemplate('error', $error);
         }
     }
     public static function edit()

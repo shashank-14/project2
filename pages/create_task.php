@@ -19,7 +19,6 @@
 
 <form action="index.php?page=tasks&action=store&id=" method="post" id="form1">
 
-<!--ID:<input type="text" name="id" value=""><br>-->
 Owner Email:<input type="text" name="owneremail" value=""><br>
 Owner ID:<input type="text" name="ownerid" value=""><br>
 Created Date:<input type="text" name="createddate" value=""><br>

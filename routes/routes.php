@@ -51,13 +51,13 @@ class routes
         $route->method = 'all';
         $routes[] = $route;
         //GET METHOD index.php?page=accounts&action=all
-        $route = new route();
+        /*$route = new route();
         $route->http_method = 'GET';
         $route->action = 'all';
         $route->page = 'accounts';
         $route->controller = 'accountsController';
         $route->method = 'all';
-        $routes[] = $route;
+        $routes[] = $route;*/
         //GET METHOD index.php?page=accounts&action=show
         $route = new route();
         $route->http_method = 'GET';
@@ -145,10 +145,11 @@ class routes
  
          $route = new route();
          $route->http_method = 'POST';
-         $route->action = 'register';
+         $route->action = 'store';
          $route->page = 'accounts';
          $route->controller = 'accountsController';
          $route->method = 'store';
+         
          $routes[] = $route;
  
         return $routes;

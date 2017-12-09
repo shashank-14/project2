@@ -14,12 +14,12 @@ class processRequest
         //this determines the method to call for the controller
         $controller_method = $requested_route->method;
         //these echo helps figure out the controller name and method
-        // echo $controller_name . '</br>';
-        // echo $controller_method . '</br>';
+        //echo $controller_name . '</br>';
+        //echo $controller_method . '</br>';
         //I use a static for the controller because it doesn't have any properties
-        echo "name ".$controller_name;
+        //echo "name ".$controller_name;
         echo '<br>';
-        echo "method ".$controller_method;
+        //echo "method ".$controller_method;
         $controller_name::$controller_method();
     }
     //this function matches the request to the correct controller
@@ -39,7 +39,7 @@ class processRequest
         $foundRoute = NULL;
         //this figures out which route matches the page being requested in the URL and returns it so that the controller and method can be called
         foreach ($routes as $route) {
-          //echo $route->action;
+          echo $route->action;
             if ($route->page == $page && $route->http_method == $request_method && $route->action == $action) {
                 $foundRoute = $route;
                 break;

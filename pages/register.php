@@ -16,17 +16,20 @@
 </head>
 
 <body>
+<?php
 
+echo '<h1>hey</h1>';
+?>
 
-<form action="index.php?page=accounts&action=register" method="post">
-    First name: <input type="text" name="fname"><br>
-    Last name: <input type="text" name="lname"><br>
-    Email: <input type="text" name="email"><br>
-    Phone: <input type="text" name="phone"><br>
-    Birthday: <input type="text" name="birthday"><br>
-    Gender: <input type="text" name="gender"><br>
-    Password: <input type="password" name="password"><br>
-    <input type="submit" value="Submit form">
+<form action="index.php?page=accounts&action=store" method="post" id="form1">
+    First name: <input type="text" name="fname" value=""><br>
+    Last name: <input type="text" name="lname" value=""><br>
+    Email: <input type="text" name="email" value=""><br>
+    Phone: <input type="text" name="phone" value=""><br>
+    Birthday: <input type="text" name="birthday" value=""><br>
+    Gender: <input type="text" name="gender" value=""><br>
+    Password: <input type="password" name="password" value=""><br>
+    <button type="submit" form="form1" value="Submit">Submit</button>
 </form>
 
 

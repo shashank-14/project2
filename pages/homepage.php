@@ -40,7 +40,7 @@
     </div>
 </form>
 
-<h1><a href="index.php?page=tasks&action=all">Register</a></h1>
+<h1><a href="index.php?page=accounts&action=register">Register</a></h1>
 
 <script src="js/scripts.js"></script>
 </body>
