@@ -33,10 +33,10 @@ Due Date:<input type="text" name="duedate" value="<?php echo $data->duedate;?>">
 Message:<input type="text" name="message" value="<?php echo $data->message;?>"><br>
 Is Done:<input type="text" name="isdone" value="<?php echo $data->isdone;?>"><br>
 
-
-
-    <button type="submit" form="form1" value="save">Save</button>
+<button type="submit" form="form1" value="save">Save</button>
 </form>
+
+
 
 
 <script src="js/scripts.js"></script>

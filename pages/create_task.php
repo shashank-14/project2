@@ -17,14 +17,6 @@
 
 <body>
 
-<?php
-//this is how you print something  $data contains the record that was selected on the table.
-//print_r($data);
-//$id= $data->id;
-//database/model::lastID();
-
-echo '<br>';
-?>
 <form action="index.php?page=tasks&action=store&id=" method="post" id="form1">
 
 <!--ID:<input type="text" name="id" value=""><br>-->

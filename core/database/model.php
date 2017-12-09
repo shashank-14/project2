@@ -31,17 +31,10 @@ abstract class model
     private function insert()
     {
         $id=$this->lastID();
-        $record= new \todo;
-        $record->id=$id;
-        $record->owneremail=$_POST['owneremail'];
-        $record->ownerid=$_POST['ownerid'];
-        $record->createddate=$_POST['createddate'];
-        $record->duedate=$_POST['duedate'];
-        $record->message=$_POST['message'];
-        $record->isdone=$_POST['isdone'];
+        $this->id=$id;
         $modelName = static::$modelName;
         $tableName = $modelName::getTablename();
-        $array = get_object_vars($record);
+        $array = get_object_vars($this);
         $columnString = array_keys($array);
         $columnString1=implode(',', $columnString);
         $valueString = "'".implode("','", $array)."'";
@@ -50,17 +43,9 @@ abstract class model
     }
     private function update()
     {
-        $record= new \todo;
-        $record->id=$_REQUEST['id'];
-        $record->owneremail=$_POST['owneremail'];
-        $record->ownerid=$_POST['ownerid'];
-        $record->createddate=$_POST['createddate'];
-        $record->duedate=$_POST['duedate'];
-        $record->message=$_POST['message'];
-        $record->isdone=$_POST['isdone'];
         $modelName = static::$modelName;
         $tableName = $modelName::getTablename();
-        $array = get_object_vars($record);
+        $array = get_object_vars($this);
         $comma = " ";
         $sql = 'UPDATE ' . $tableName . ' SET ';
         foreach ($array as $key => $value) {

@@ -111,6 +111,46 @@ class routes
         $route->method = 'create';
         $routes[] = $route;
         
+         $route = new route();
+         $route->http_method = 'POST';
+         $route->action = 'delete';
+         $route->page = 'accounts';
+         $route->controller = 'accountsController';
+         $route->method = 'delete';
+         $routes[] = $route;
+ 
+         $route = new route();
+         $route->http_method = 'GET';
+         $route->action = 'edit';
+         $route->page = 'accounts';
+         $route->controller = 'accountsController';
+         $route->method = 'edit';
+         $routes[] = $route;
+ 
+         $route = new route();
+         $route->http_method = 'POST';
+         $route->action = 'save';
+         $route->page = 'accounts';
+         $route->controller = 'accountsController';
+         $route->method = 'save';
+         $routes[] = $route;
+ 
+         $route = new route();
+         $route->http_method = 'GET';
+         $route->action = 'register';
+         $route->page = 'accounts';
+         $route->controller = 'accountsController';
+         $route->method = 'register';
+         $routes[] = $route;
+ 
+         $route = new route();
+         $route->http_method = 'POST';
+         $route->action = 'register';
+         $route->page = 'accounts';
+         $route->controller = 'accountsController';
+         $route->method = 'store';
+         $routes[] = $route;
+ 
         return $routes;
     }
 }
