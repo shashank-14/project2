@@ -5,7 +5,7 @@ class htmlTable
 {
     public static function genarateTableFromMultiArray($array)
     {
-        print_r($array);
+        //print_r($array);
         $tableGen = '<table border="1"cellpadding="10">';
         $tableGen .= '<tr>';
         //this grabs the first element of the array so we can extract the field headings for the table

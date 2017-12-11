@@ -20,7 +20,7 @@ abstract class model
       $tableName = $modelName::getTablename();
       $db = dbConn::getConnection();
       $sql='select MAX(id) from '.$tableName;
-      echo $sql;
+      //echo $sql;
       $statement = $db->prepare($sql);
       $statement->execute();
       $statement->setFetchMode();

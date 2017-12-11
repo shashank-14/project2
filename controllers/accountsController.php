@@ -93,7 +93,7 @@ class accountsController extends http\controller
         //        $record = accounts::findUser($_POST['email']);
         
         $user = accounts::findUserbyEmail($_REQUEST['uname']);
-        print_r($user);
+        //print_r($user);
         if ($user == FALSE) {
             echo 'user not found';
         } else {
@@ -102,8 +102,8 @@ class accountsController extends http\controller
                 session_start();
                 $_SESSION["userID"] = $user->id;
                 //forward the user to the show all todos page
-                print_r($_SESSION);
-                header();
+                //print_r($_SESSION);
+                self::getTemplate('login_homepage', NULL);
             } else {
                 echo 'password does not match';
             }
