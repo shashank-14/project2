@@ -33,7 +33,7 @@ Is Done:<input type="text" name="isdone" value="<?php echo $data->isdone;?>"read
 
 
 <form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
-    <button type="submit" form="form1" value="save">Delete</button>
+    <button type="submit" form="form1" value="delete">Delete</button>
 </form>
 
 

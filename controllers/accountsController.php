@@ -91,16 +91,19 @@ class accountsController extends http\controller
         //you might want to add something that handles if the password is invalid, you could add a page template and direct to that
         //after you login you can use the header function to forward the user to a page that displays their tasks.
         //        $record = accounts::findUser($_POST['email']);
-        $user = accounts::findUserbyEmail($_REQUEST['email']);
+        
+        $user = accounts::findUserbyEmail($_REQUEST['uname']);
+        print_r($user);
         if ($user == FALSE) {
             echo 'user not found';
         } else {
-            if($user->checkPassword($_POST['password']) == TRUE) {
-                echo 'login';
+            if($user->checkPassword($_POST['psw']) == TRUE) {
+                //echo 'login';
                 session_start();
                 $_SESSION["userID"] = $user->id;
                 //forward the user to the show all todos page
                 print_r($_SESSION);
+                header();
             } else {
                 echo 'password does not match';
             }
