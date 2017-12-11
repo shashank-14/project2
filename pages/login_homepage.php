@@ -21,7 +21,7 @@
 <h1>
     <?php
     //this how to print some data;
-    echo $_SESSION["userID"];
+    //echo $_SESSION["userID"];
     ?> </h1>
 
 

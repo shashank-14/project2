@@ -12,7 +12,7 @@ class accountsController extends http\controller
     //to call the show function the url is index.php?page=accounts&action=all
     public static function all()
     {
-        echo 'in all';
+        //echo 'in all';
         $records = accounts::findAll();
         self::getTemplate('all_accounts', $records);
     }

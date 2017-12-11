@@ -18,12 +18,12 @@ class tasksController extends http\controller
         session_start();
            if(key_exists('userID',$_SESSION)) {
                $userID = $_SESSION['userID'];
+               $userID = $_SESSION['userID'];
+               $records = todos::findTasksbyID($userID);
+               self::getTemplate('all_tasks', $records);
            } else {
                echo 'you must be logged in to view tasks';
            }
-        $userID = $_SESSION['userID'];
-        $records = todos::findTasksbyID($userID);
-        self::getTemplate('all_tasks', $records);
         //session_start();
         //echo $_SESSION['userID'];
     }

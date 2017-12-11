@@ -25,7 +25,12 @@ $text.='<h1><a href="index.php?page=tasks&action=create">Create New Task</a></h1
 $text.='</center>';
 echo $text;
 
+if($data==FALSE){
+  echo 'No records found';
+}
+else{
 print utility\htmlTable::genarateTableFromMultiArray($data);
+}
 ?>
 
 
