@@ -31,6 +31,16 @@ class routes
         $route->controller = 'homepageController';
         $route->method = 'create';
         $routes[] = $route;
+        
+        $route = new route();
+        $route->http_method = 'GET';
+        $route->action = 'logout';
+        $route->page = 'accounts';
+        $route->controller = 'accountsController';
+        $route->method = 'logout';
+        $routes[] = $route;
+        
+        
         //This is an examole of the post for tasks to show a task
         //GET METHOD index.php?page=tasks&action=show
         $route = new route();

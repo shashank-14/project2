@@ -15,7 +15,8 @@ class tasksController extends http\controller
         //$records = todos::findAll();
         //self::getTemplate('all_tasks', $records);
          $records = todos::findAll();
-        session_start();
+        //print_r($records);
+                session_start();
            if(key_exists('userID',$_SESSION)) {
                $userID = $_SESSION['userID'];
                $userID = $_SESSION['userID'];

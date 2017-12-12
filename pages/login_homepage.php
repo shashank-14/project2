@@ -26,7 +26,7 @@
 
 
 <h1><a href="index.php?page=tasks&action=all">Show All Tasks</a></h1>
-
+<label><a href="index.php?page=accounts&action=logout">Logout</a></label>
 
 <script src="js/scripts.js"></script>
 </body>
