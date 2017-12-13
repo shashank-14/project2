@@ -7,6 +7,9 @@
     <title>The HTML5 Herald</title>
     <meta name="description" content="The HTML5 Herald">
     <meta name="author" content="SitePoint">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="css/styles.css?v=1.0">
 
@@ -20,16 +23,20 @@
 <?php
 //this is how you print something
 $text='';
-$text.='<centre>';
-$text.='<h1><a href="index.php?page=tasks&action=create">Create New Task</a></h1>';
-$text.='</center>';
-echo $text;
+$text.='<center>';
+$text.='<h2>Pending Tasks</h2><br>';
+$text.='<h4><a href="index.php?page=tasks&action=create">Create New Task</a></h4><br>';
+
 
 if($data==FALSE){
-  echo 'No records found';
+  $text.='No records found';
+  $text.='</center>';
+  echo $text;
 }
 else{
-print utility\htmlTable::genarateTableFromMultiArray($data);
+$text.=utility\htmlTable::genarateTableFromMultiArray($data);
+$text.='</center>';
+echo $text;
 }
 ?>
 
