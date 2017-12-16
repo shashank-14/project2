@@ -17,13 +17,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
 </head>
+<style>
+html body {
+    background: linear-gradient(to bottom right, #7575a3, #ffffff);
+    text-align:center;
+}
+label {
+width:100px;
+}
+</style>
 
 <body>
 
 <?php
 //this is how you print something
 $text='';
-$text.='<center>';
 $text.='<h2>Pending Tasks</h2><br>';
 $text.='<h4><a href="index.php?page=tasks&action=create">Create New Task</a></h4><br>';
 
@@ -35,7 +43,6 @@ if($data==FALSE){
 }
 else{
 $text.=utility\htmlTable::genarateTableFromMultiArray($data);
-$text.='</center>';
 echo $text;
 }
 ?>

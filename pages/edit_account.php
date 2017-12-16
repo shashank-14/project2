@@ -17,27 +17,52 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
 </head>
+<style>
+html body {
+    background: linear-gradient(to bottom right, #7575a3, #ffffff);
+    text-align:center;
+}
+label {
+width:100px;
+}
+</style>
 
 <body>
 
-<br>
-<center>
-<form action="index.php?page=accounts&action=save&id=<?php echo $data->id; ?>" method="post">
+<form action="index.php?page=accounts&action=save&id=<?php echo $data->id; ?>" method="post" class = "form-inline">
 
-    First name: <input type="text" name="fname" value="<?php echo $data->fname; ?>"><br><br>
-
-    Last name: <input type="text" name="lname" value="<?php echo $data->lname; ?>"><br><br>
-    Email: <input type="text" name="email" value="<?php echo $data->email; ?>"><br><br>
-    Phone: <input type="text" name="phone" value="<?php echo $data->phone; ?>"><br><br>
-    Birthday: <input type="text" name="birthday" value="<?php echo $data->birthday; ?>"><br><br>
-    Gender: <input type="text" name="gender" value="<?php echo $data->gender; ?>"><br><br>
-    <br><br>
-    <input type="submit" value="SAVE">
+    <div class = "form-group" align="center">
+    <label>First name-</label>
+    <input type="text" class="form-control" name="fname" value="<?php echo $data->fname; ?>">
+    </div><br><br>
+    
+    <div class = "form-group" align="center">
+    <label>Last name-</label>
+    <input type="text" class="form-control" name="lname" value="<?php echo $data->lname; ?>">
+    </div><br><br>
+    
+    <div class = "form-group" align="center">
+    <label>Email-</label>
+    <input type="text" class="form-control" name="email" value="<?php echo $data->email; ?>">
+    </div><br><br>
+    
+    <div class = "form-group" align="center">
+    <label>Phone-</label>
+    <input type="text" class="form-control" name="phone" value="<?php echo $data->phone; ?>">
+    </div><br><br>
+    
+    <div class = "form-group" align="center">
+    <label>Birthday-</label>
+    <input type="text" class="form-control" name="birthday" value="<?php echo $data->birthday; ?>">
+    </div><br><br>
+    
+    <div class = "form-group" align="center">
+    <label>Gender-</label>
+    <input type="text" class="form-control" name="gender" value="<?php echo $data->gender; ?>">
+    </div><br><br>
+    <input type="submit" class="btn btn-primary" value="SAVE">
 </form>
 
-
-
-</center>
 <script src="js/scripts.js"></script>
 </body>
 </html>

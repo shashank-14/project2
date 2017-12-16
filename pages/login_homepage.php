@@ -18,16 +18,20 @@
     <![endif]-->
 </head>
 
+<style>
+html body {
+    background: linear-gradient(to bottom right, #7575a3, #ffffff);
+    text-align:center;
+}
+label {
+width:100px;
+}
+</style>
+
 <body>
 
 
-<h1>
-    <?php
-    //this how to print some data;
-    //echo $_SESSION["userID"];
-    ?> </h1>
 
-<center>
 <h1><a href="index.php?page=tasks&action=all">Show All Tasks</a></h1>
 
 <div style="position: absolute; top: 20; right: 140;">
@@ -41,7 +45,6 @@
         <button type="submit" class="btn btn-primary">LOGOUT</button>
 </form>
 </div>
-</center>
 
 <script src="js/scripts.js"></script>
 </body>

@@ -17,40 +17,53 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
 </head>
-
+<style>
+html body {
+    background: linear-gradient(to bottom right, #7575a3, #ffffff);
+    text-align:center;
+}
+label {
+width:100px;
+}
+</style>
 <body>
 
-<?php
-echo '<br>';
-?>
-<center>
+
+
 <form action="index.php?page=tasks&action=store&id=<?php echo $data->id; ?>" method="post" class = "form-inline" id="form1">
 <div class = "form-group">
-ID:<input type="text" class="form-control" name="id" value="<?php echo $data->id;?>">
+<label>ID-</label>
+<input type="text" class="form-control" name="id" value="<?php echo $data->id;?>">
 </div><br><br>
 
 <div class = "form-group">
-Owner Email:<input type="text" class="form-control" name="owneremail" value="<?php echo $data->owneremail;?>">
+<label>Owner Email-</label>
+<input type="text" class="form-control" name="owneremail" value="<?php echo $data->owneremail;?>">
 </div><br><br>
 
 <div class = "form-group">
-Owner ID:<input type="text" class="form-control" name="ownerid" value="<?php echo $data->ownerid;?>">
+<label>Owner ID-</label>
+<input type="text" class="form-control" name="ownerid" value="<?php echo $data->ownerid;?>">
 </div><br><br>
 
 <div class = "form-group">
-Created Date:<input type="text" class="form-control" name="createddate" value="<?php echo $data->createddate;?>">
+<label>Created Date-</label>
+<input type="text" class="form-control" name="createddate" value="<?php echo $data->createddate;?>">
 </div><br><br>
 
 <div class = "form-group">
-Due Date:<input type="text" class="form-control" name="duedate" value="<?php echo $data->duedate;?>">
+<label>Due Date-</label>
+<input type="text" class="form-control" name="duedate" value="<?php echo $data->duedate;?>">
 </div><br><br>
 
 <div class = "form-group">
-Message:<input type="text" class="form-control" name="message" value="<?php echo $data->message;?>">
+<label>Message-</label>
+<input type="text" class="form-control" name="message" value="<?php echo $data->message;?>">
 </div><br><br>
 
 <div class = "form-group">
-Is Done:<input type="text" class="form-control" name="isdone" value="<?php echo $data->isdone;?>">
+<label>Is Done-</label>
+<input type="text" class="form-control" name="isdone" value="<?php echo $data->isdone;?>">
 </div><br><br>
 
 <button type="submit" class="btn btn-primary" form="form1" value="save">Save</button>
@@ -58,7 +71,7 @@ Is Done:<input type="text" class="form-control" name="isdone" value="<?php echo 
 
 
 
-</center>
+
 <script src="js/scripts.js"></script>
 </body>
 </html>

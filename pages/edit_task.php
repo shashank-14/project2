@@ -17,44 +17,59 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
 </head>
-
+<style>
+html body {
+    background: linear-gradient(to bottom right, #7575a3, #ffffff);
+    text-align:center;
+}
+label {
+width:100px;
+}
+</style>
 <body>
-<center>
+
 
 <form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1" class = "form-inline">
 
 <div class = "form-group">
-ID:<input type="text" name="id" class="form-control" value="<?php echo $data->id;?>"readonly>
+<label>ID-</label>
+<input type="text" name="id" class="form-control" value="<?php echo $data->id;?>"readonly>
 </div>
 <br><br>
 
 <div class = "form-group">
-Owner Email:<input type="text" name="owneremail" class="form-control" value="<?php echo $data->owneremail;?>"readonly><br>
+<label>Owner Email-</label>
+<input type="text" name="owneremail" class="form-control" value="<?php echo $data->owneremail;?>"readonly><br>
 </div>
 <br><br>
 
 <div class = "form-group">
-Owner ID:<input type="text" name="ownerid" class="form-control" value="<?php echo $data->ownerid;?>"readonly><br>
+<label>Owner ID-</label>
+<input type="text" name="ownerid" class="form-control" value="<?php echo $data->ownerid;?>"readonly><br>
 </div>
 <br><br>
 
 <div class = "form-group">
-Created Date:<input type="text" name="createddate" class="form-control" value="<?php echo $data->createddate;?>"readonly><br>
+<label>Created Date-</label>
+<input type="text" name="createddate" class="form-control" value="<?php echo $data->createddate;?>"readonly><br>
 </div>
 <br><br>
 
 <div class = "form-group">
-Due Date:<input type="text" name="duedate" class="form-control" value="<?php echo $data->duedate;?>"readonly><br>
+<label>Due Date-</label>
+<input type="text" name="duedate" class="form-control" value="<?php echo $data->duedate;?>"readonly><br>
 </div>
 <br><br>
 
 <div class = "form-group">
-Message:<input type="text" name="message" class="form-control" value="<?php echo $data->message;?>"readonly><br>
+<label>Message-</label>
+<input type="text" name="message" class="form-control" value="<?php echo $data->message;?>"readonly><br>
 </div>
 <br><br>
 
 <div class = "form-group">
-Is Done:<input type="text" name="isdone" class="form-control" value="<?php echo $data->isdone;?>"readonly><br>
+<label>Is Done-</label>
+<input type="text" name="isdone" class="form-control" value="<?php echo $data->isdone;?>"readonly><br>
 </div>
 <br><br>
 
@@ -62,7 +77,6 @@ Is Done:<input type="text" name="isdone" class="form-control" value="<?php echo 
 </form>
 
 
-<center>
 <script src="js/scripts.js"></script>
 </body>
 </html>

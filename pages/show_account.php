@@ -15,6 +15,15 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
 </head>
+<style>
+html body {
+    background: linear-gradient(to bottom right, #7575a3, #ffffff);
+    text-align:center;
+}
+label {
+width:100px;
+}
+</style>
 
 <body>
 
@@ -24,23 +33,41 @@
 <form action="index.php?page=accounts&action=edit&id=<?php echo $data->id; ?>" method="post" class = "form-inline">
     
     <div class = "form-group">
-    First name: <input type="text" class="form-control" name="fname" value="<?php echo $data->fname; ?>"readonly>
-    </div>
-    <br><br>
+    <label>First name-</label>
+    <input type="text" class="form-control" name="fname" value="<?php echo $data->fname; ?>"readonly>
+    </div><br><br>
 
-    Last name: <input type="text" name="lname" value="<?php echo $data->lname; ?>"readonly><br><br>
-    Email: <input type="text" name="email" value="<?php echo $data->email; ?>"readonly><br><br>
-    Phone: <input type="text" name="phone" value="<?php echo $data->phone; ?>"readonly><br><br>
-    Birthday: <input type="text" name="birthday" value="<?php echo $data->birthday; ?>"readonly><br><br>
-    Gender: <input type="text" name="gender" value="<?php echo $data->gender; ?>"readonly><br><br>
-    <br><br>
-    </div>
-    <input type="submit" value="Edit">
+    <div class = "form-group" align="center">
+    <label>Last name-</label>
+    <input type="text" class="form-control" name="lname" value="<?php echo $data->lname; ?>"readonly>
+    </div><br><br>
+    
+    <div class = "form-group" align="center">
+    <label>Email-</label>
+    <input type="text" class="form-control" name="email" value="<?php echo $data->email; ?>"readonly>
+    </div><br><br>
+    
+    <div class = "form-group" align="center">
+    <label>Phone-</label>
+    <input type="text" class="form-control" name="phone" value="<?php echo $data->phone; ?>"readonly>
+    </div><br><br>
+    
+    <div class = "form-group" align="center">
+    <label>Birthday-</label>
+    <input type="text" class="form-control" name="birthday" value="<?php echo $data->birthday; ?>"readonly>
+    </div><br><br>
+    
+    <div class = "form-group" align="center">
+    <label>Gender-</label>
+    <input type="text" class="form-control" name="gender" value="<?php echo $data->gender; ?>"readonly>
+    </div><br><br>
+    
+    <input type="submit" class="btn btn-primary" value="Edit">
 </form>
 
 
 <form action="index.php?page=accounts&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
-    <button type="submit" form="form1" value="delete">Delete</button>
+    <button type="submit" class="btn btn-primary" form="form1" value="delete">Delete</button>
 </form>
 
 </center>

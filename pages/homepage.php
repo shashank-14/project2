@@ -18,6 +18,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
 </head>
+<style>
+html body {
+    background: linear-gradient(to bottom right, #7575a3, #ffffff);
+    text-align:center;
+}
+label {
+width:100px;
+}
+</style>
 
 <body>
 
@@ -28,9 +37,6 @@
     //echo $data['site_name'];
     ?> </h1>
 
-<!--<h1><a href="index.php?page=accounts&action=all">Show All Accounts</a></h1>-->
-<!--<h1><a href="index.php?page=tasks&action=all">Show All Tasks</a></h1>-->
-<center>
 <form action="index.php?page=accounts&action=login" method="POST">
 
     <div class="container">
@@ -45,7 +51,6 @@
 </form>
 
 <h3><a href="index.php?page=accounts&action=register">Register</a></h3>
-<center>
 <script src="js/scripts.js"></script>
 </body>
 </html>

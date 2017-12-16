@@ -17,38 +17,51 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
 </head>
-
+<style>
+html body {
+    background: linear-gradient(to bottom right, #7575a3, #ffffff);
+    text-align:center;
+}
+label {
+width:100px;
+}
+</style>
 <body>
-<center>
 <form action="index.php?page=tasks&action=store&id=" method="post" id="form1" class = "form-inline">
 
 <div class = "form-group">
-Owner Email:<input type="text" class="form-control" name="owneremail" value="">
+<label>Owner Email-</label>
+<input type="text" class="form-control" name="owneremail" value="">
 </div>
 <br><br>
 
 <div class = "form-group">
-Owner ID:   <input type="text" class="form-control" name="ownerid" value="">
+<label>Owner ID-</label>
+<input type="text" class="form-control" name="ownerid" value="">
 </div>
 <br><br>
 
 <div class = "form-group">
-Created Date:<input type="text" class="form-control" name="createddate" value="">
+<label>Created Date-</label>
+<input type="text" class="form-control" name="createddate" value="">
 </div>
 <br><br>
 
 <div class = "form-group">
-Due Date:<input type="text" class="form-control" name="duedate" value="">
+<label>Due Date-</label>
+<input type="text" class="form-control" name="duedate" value="">
 </div>
 <br><br>
 
 <div class = "form-group">
-Message:<input type="text" class="form-control" name="message" value="">
+<label>Message-</label>
+<input type="text" class="form-control" name="message" value="">
 </div>
 <br><br>
 
 <div class = "form-group">
-Is Done:<input type="text" class="form-control" name="isdone" value="">
+<label>Is Done-</label>
+<input type="text" class="form-control" name="isdone" value="">
 </div>
 <br><br>
 
@@ -58,6 +71,5 @@ Is Done:<input type="text" class="form-control" name="isdone" value="">
 
 
 <script src="js/scripts.js"></script>
-</center>
 </body>
 </html>
