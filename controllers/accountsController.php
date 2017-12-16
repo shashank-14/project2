@@ -88,6 +88,7 @@ class accountsController extends http\controller
                 //echo 'login';
                 session_start();
                 $_SESSION["userID"] = $user->id;
+                $_SESSION["email"]= $user->email;
                 //forward the user to the show all todos page
                 //print_r($_SESSION);
                 self::getTemplate('login_homepage', NULL);
