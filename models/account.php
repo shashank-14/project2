@@ -31,7 +31,7 @@ final class account extends \database\model
     public function checkPassword($LoginPassword) {
         return password_verify($LoginPassword, $this->password);
     }
-    public function validate()
+    /*public function validate()
     {
         $valid = TRUE;
         echo 'myemail: ' . $this->email;
@@ -40,6 +40,6 @@ final class account extends \database\model
             echo 'nothing in email';
         }
         return $valid;
-    }
+    }*/
 }
 ?>

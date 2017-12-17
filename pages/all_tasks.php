@@ -97,7 +97,7 @@ $text.='<a href="index.php?page=tasks&action=create"><span class="glyphicon glyp
 
 
 if($data==FALSE){
-  $text.='No records found';
+  $text.='<br>No records found';
   $text.='</center>';
   echo $text;
 }

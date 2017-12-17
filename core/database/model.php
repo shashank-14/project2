@@ -2,17 +2,50 @@
 namespace database;
 abstract class model
 {
-    public function save()
-    {
-        if ($this->id != '') {
-            $sql = $this->update();
-        } else {
-            $sql = $this->insert();
-            $INSERT = TRUE;
+    public function save(){
+      
+      $result= $this->validate();
+      //echo $result;
+      
+    if($result=='pass'){
+      if ($this->id != '') {
+        $sql = $this->update();
+        } 
+      else {
+        $sql = $this->insert();
+        $INSERT = TRUE;
         }
-        $db = dbConn::getConnection();
-        $statement = $db->prepare($sql);
-        $statement->execute();
+      $db = dbConn::getConnection();
+      $statement = $db->prepare($sql);
+      $statement->execute();
+    }
+    else{
+      echo $result;
+      exit;
+    }
+  }
+    
+    public function validate() {
+      //echo 'in validate';
+      $flag='pass';
+      $modelName = static::$modelName;
+      $tableName = $modelName::getTablename();
+      //echo $tableName;
+      
+      if($tableName =='todos'){
+        $message=$this->message;
+        $isDone=$this->isdone;
+        
+        if(strlen($message)<6){
+          $flag='Message too short ! Enter message of atleast 6 characters';
+          //echo 'Message too short ! Enter message of atleast 6 characters';
+        }
+        if($isDone>=2 or $isDone<0){
+          $flag='IsDone should be boolean';
+          //echo 'IsDone should be boolean';
+            }
+    }
+    return $flag;
     }
     
     public function lastID(){
