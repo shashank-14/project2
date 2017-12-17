@@ -19,6 +19,7 @@
     
     /* Set gray background color and 100% height */
     .sidenav {
+      background-image: url("/1.jpg");
       padding-top: 20px;
       background-color: #f1f1f1;
       height: 100%;
@@ -39,6 +40,10 @@
       }
       .row.content {height:auto;} 
     }
+    .img-responsive{
+      height:400px;
+    }
+    
   </style>
 </head>
 <body>
@@ -65,9 +70,11 @@
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
+    <img class="img-responsive" src="2.jpg" alt="">
     </div>
     
     <div class="col-sm-8 text-center"> 
+      
       <h1>Welcome</h1>
       <p>This is website for managing tasks.</p>
       <hr>  
