@@ -5,7 +5,6 @@ abstract class model
     public function save(){
       
       $result= $this->validate();
-      //echo $result;
       
     if($result=='pass'){
       if ($this->id != '') {
@@ -21,19 +20,14 @@ abstract class model
     }
     else{
       echo $result;
-      //echo 'in else';
       exit;
-      //http\Controller::getTemplate('error',$result);
-      //exit;
     }
   }
     
     public function validate() {
-      //echo 'in validate';
       $flag='pass';
       $modelName = static::$modelName;
       $tableName = $modelName::getTablename();
-      //echo $tableName;
       
       if($tableName =='todos'){
         $message=$this->message;
@@ -41,11 +35,9 @@ abstract class model
         
         if(strlen($message)<6){
           $flag='Message too short ! Enter message of atleast 6 characters';
-          //echo 'Message too short ! Enter message of atleast 6 characters';
         }
         if($isDone>=2 or $isDone<0){
           $flag='IsDone should be boolean';
-          //echo 'IsDone should be boolean';
             }
     }
     return $flag;
