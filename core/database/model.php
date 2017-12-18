@@ -48,19 +48,16 @@ abstract class model
       $tableName = $modelName::getTablename();
       $db = dbConn::getConnection();
       $sql='select MAX(id) from '.$tableName;
-      //echo $sql;
       $statement = $db->prepare($sql);
       $statement->execute();
       $statement->setFetchMode();
       $recordsSet =  $statement->fetchAll(\PDO::FETCH_ASSOC);
       $record=$recordsSet[0];
       $LastID= $record["MAX(id)"];
-      //echo $LastID;
       return $LastID+1;
     }
     private function insert()
     {
-        //echo 'in insert';
         $id=$this->lastID();
         $this->id=$id;
         $modelName = static::$modelName;
@@ -70,7 +67,6 @@ abstract class model
         $columnString1=implode(',', $columnString);
         $valueString = "'".implode("','", $array)."'";
         $sql = 'INSERT INTO ' . $tableName . ' (' . $columnString1 . ') VALUES (' . $valueString . ')';
-        //echo $sql;
         return $sql;
     }
     private function update()
@@ -82,14 +78,11 @@ abstract class model
         $sql = 'UPDATE ' . $tableName . ' SET ';
         foreach ($array as $key => $value) {
             if (!empty($value)) {
-            //echo '<br>';
-            //echo $value;
                 $sql .= $comma . $key . ' = "' . $value . '"';
                 $comma = ", ";
             }
         }
         $sql .= ' WHERE id=' . $this->id;
-        //echo $sql;
         return $sql;
     }
     public function delete()

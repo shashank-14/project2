@@ -125,7 +125,7 @@
 
 <div class = "form-group">
 <label>Is Done-</label>
-<input type="text" class="form-control" name="isdone" value="">
+<input type="number" min="0" max="1" class="form-control" name="isdone" value="">
 </div>
 <br><br>
 

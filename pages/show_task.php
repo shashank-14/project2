@@ -122,7 +122,7 @@
 
 <div class = "form-group">
 <label>Is Done-</label>
-<input type="text" class="form-control" name="isdone" value="<?php echo $data->isdone;?>">
+<input type="number" class="form-control" min="0" max="1" name="isdone" value="<?php echo $data->isdone;?>">
 </div><br><br>
 
 <button type="submit" class="btn btn-primary" form="form1" value="save">Save</button>
